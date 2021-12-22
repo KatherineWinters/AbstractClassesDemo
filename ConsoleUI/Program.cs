@@ -10,10 +10,57 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            /*
-             * Todo follow all comments!! 
-             */
+        
+            var list = new List<Vehicle>();
 
+            Car car1 = new Car()
+            {
+                Year = "2014",
+                Make = "Ford",
+                Model = "Explorer"
+            };
+
+            Motorcycle motorcycle1 = new Motorcycle()
+            {
+                Year = "2015",
+                Make = "Yamaha",
+                Model = "V Star"
+            };
+
+            Vehicle car2 = new Car()
+            {
+                Year = "2001",
+                Make = "Toyota",
+                Model = "Camery"
+            };
+
+            Vehicle car3 = new Car()
+            {
+                Year = "2016",
+                Make = "Hyundai",
+                Model = "Elantra"
+            };
+
+            list.Add(car1);
+            list.Add(motorcycle1);
+            list.Add(car2);
+            list.Add(car3);
+
+            foreach (var vehicle in list)
+            {
+                Console.WriteLine($"Year: {vehicle.Year}\n" +
+                                  $"Make: {vehicle.Make}\n" +
+                                  $"Model: {vehicle.Model}\n");
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+            motorcycle1.DriveAbstract();
+            motorcycle1.DriveVirtual();
+            car1.DriveAbstract();
+            car2.DriveAbstract();
+           
             #region Vehicles
 
             /*
